@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MarketReady — Marketing Jobs & Interview Preparation</title>
+  <meta name="description" content="Verified marketing jobs in Chennai and Pondicherry with skills, match scores, application tracking and interview preparation.">
+  <meta name="theme-color" content="#171717">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171717'/%3E%3Cpath d='M15 45V19h8l9 13 9-13h8v26h-8V31l-9 12-9-12v14z' fill='%23ff654f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#jobs" aria-label="MarketReady home"><span>MARKET</span>READY</a>
+    <nav aria-label="Main navigation">
+      <button class="nav-link active" data-view="jobs">Jobs</button>
+      <button class="nav-link" data-view="tracker">My Tracker <span id="trackerCount">0</span></button>
+      <a class="nav-cta" href="https://wa.me/917397559527?text=Hi%20Prakash%2C%20I%20want%20a%20marketing%20mock%20interview." target="_blank" rel="noopener">Mock interview</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="jobsView" class="view active" aria-labelledby="jobsHeading">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">CHENNAI + PONDICHERRY</p>
+          <h1 id="jobsHeading">Find the role.<br><em>Prepare to win it.</em></h1>
+          <p class="hero-copy">Marketing jobs with clear skills, readiness scores and interview guidance—not endless listings.</p>
+        </div>
+        <div class="hero-stat"><strong id="visibleCount">0</strong><span>roles matching your filters</span></div>
+      </div>
+
+      <section class="search-panel" aria-label="Job search filters">
+        <label class="search-box"><span>Search</span><input id="searchInput" type="search" placeholder="Role, company or skill"></label>
+        <label><span>City</span><select id="cityFilter"><option value="all">All cities</option><option value="Chennai">Chennai</option><option value="Pondicherry">Pondicherry</option></select></label>
+        <label><span>Experience</span><select id="experienceFilter"><option value="all">All levels</option><option value="Fresher">Fresher</option><option value="1–3 years">1–3 years</option><option value="3+ years">3+ years</option></select></label>
+        <label><span>Specialisation</span><select id="roleFilter"><option value="all">All roles</option><option value="Digital Marketing">Digital Marketing</option><option value="Social Media">Social Media</option><option value="SEO">SEO</option><option value="Content">Content</option><option value="Creative">Creative</option></select></label>
+        <button id="clearFilters" class="clear-btn">Clear</button>
+      </section>
+
+      <div class="jobs-layout">
+        <aside class="sidebar">
+          <div class="side-card"><p class="eyebrow">YOUR CAREER TOOLKIT</p><h2>Know where you stand.</h2><p>Open any job and complete a two-minute readiness check.</p></div>
+          <div class="side-card dark"><strong>Free 10-minute assessment</strong><p>Get personal guidance for the role you want.</p><a href="https://wa.me/917397559527?text=Hi%20Prakash%2C%20I%20want%20a%20free%2010-minute%20job-readiness%20assessment." target="_blank" rel="noopener">WhatsApp Prakash</a></div>
+        </aside>
+        <section><div id="jobGrid" class="job-grid" aria-live="polite"></div><div id="emptyState" class="empty" hidden><h2>No matching roles</h2><p>Try changing a filter or request the job you want.</p><a href="https://wa.me/917397559527?text=Hi%20Prakash%2C%20I%20cannot%20find%20the%20marketing%20job%20I%20want." target="_blank" rel="noopener">Request a job</a></div></section>
+      </div>
+    </section>
+
+    <section id="trackerView" class="view" aria-labelledby="trackerHeading">
+      <div class="tracker-head"><div><p class="eyebrow">YOUR JOB SEARCH</p><h1 id="trackerHeading">Application tracker</h1><p>Save opportunities and move them through your journey.</p></div><button id="resetTracker" class="clear-btn">Reset demo data</button></div>
+      <div id="trackerBoard" class="tracker-board"></div>
+    </section>
+  </main>
+
+  <dialog id="jobDialog" class="job-dialog"><div id="jobDetail"></div></dialog>
+  <dialog id="quizDialog" class="quiz-dialog"><form method="dialog" id="quizForm"><button class="dialog-close" value="cancel" aria-label="Close">×</button><p class="eyebrow">2-MINUTE CHECK</p><h2>Marketing Readiness Score</h2><p id="quizRole"></p><div id="quizQuestions"></div><button class="primary-btn" value="default" id="calculateScore">Calculate my score</button></form><div id="quizResult" hidden></div></dialog>
+
+  <div class="mobile-bar"><button data-view="jobs">Jobs</button><button data-view="tracker">My Tracker</button><a href="https://wa.me/917397559527?text=Hi%20Prakash%2C%20I%20want%20a%20marketing%20mock%20interview." target="_blank" rel="noopener">WhatsApp</a></div>
+  <script src="app.js"></script>
+</body>
+</html>
